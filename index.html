@@ -1,186 +1,239 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>HomePage</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-body, html {
-  height: 100%;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+body { background: #0f0f0f; }
+
+header {
+ position: relative;
+ height: 640px;
+ min-height: 500px;
+ width: 100%;
+ background-size: cover !important;
+ -webkit-background-size: cover !important;
+ text-align: center;
+ overflow: hidden;
+ opacity:10;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-.bg-image {
-
-  background-image: url("https://login.gov/assets/img/login-gov-288x288.png");
-
-
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
-
-
-  height: 92%;
-
-
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-.bg-heading {
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0);
-    color: white;
-   font-family: Verlag,museo-sans,'Helvetica Neue',Helvetica,Arial,sans-serif;
+header video {
   position: absolute;
-  top: 15%;
-  left: 59%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 70%;
-  height: 40%
-  text-align: center;
-}
-.bg-text {
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.6);
-  font-weight: bold;
-   font-family: "Helvetica", Times, serif;
-  border: 3px solid #708090;
-  color: white;
-  border-radius: 25px;
-  position: absolute;
-  top: 59%;
+  top: 50%;
   left: 50%;
+  z-index: -100;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 50%;
-  padding: 00px;
-  text-align: center;
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,18), 0 6px 20px 0 rgba(0,0,0,0.30);
-}
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
-.topnav {
-  overflow: hidden;
-  background-color: #333;
+header:before {
+ content: '';
+ display: inline-block;
+ vertical-align: middle;
+ height: 100%;
 }
 
-.topnav a {
-  float: left;
-  color: #f2f2f2;
+header .banner {
+ display: inline-block;
+ vertical-align: center;
+ margin: 0 auto;
+ width: 85%;
+ padding-bottom: -100px;
+ text-align: center;
+ font:24px 'opensans-bold', sans-serif;
+ font-weight: bold;
+}
+
+header .banner-text {
+ color: #f5f5f5;
+ width: 100%;
+}
+
+.section h3 {
   text-align: center;
-  padding: 14px 16px;
+  font-size: 60px;
+  font-family: "Cookie";
+  padding: 20px;
+  margin: 15px;
+  z-index: 1;
+
+}
+
+.w3-animate-zoom {animation:animatezoom 0.6s} @keyframes animatezoom{from{transform:scale(0)} to{transform:scale(1)}}
+
+
+
+/*button*/
+.brk-btn {
+  position: relative;
+  background: none;
+  color: aqua;
+  text-transform: uppercase;
   text-decoration: none;
-  font-size: 17px;
+  border: 0.2em solid aqua;
+  padding: 0.5em 1em;
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    right: 20%;
+    top: -0.21em;
+    transform: skewX(-45deg);
+    -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10%;
+    background: #222;
+    height: 0.3em;
+    left: 20%;
+    bottom: -0.25em;
+    transform: skewX(45deg);
+    -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+    transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  }
+  &:hover {
+    &::before {
+      right: 80%;
+    }
+    &::after {
+      left: 80%;
+    }
+  }
 }
 
-.topnav a:hover {
-  background-color: #778899;
-  color: black;
+body{
+  background:rgb(4, 25, 32);
+  text-align:center;
+  box-sizing:border-box;
+  font-family:"Lato",Sans-serif;
+/*   position:relative; */
 }
 
-.topnav a.active {
-  background-color: #1E90FF;
-  color: white;
+.box{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform : translate(-50% ,-50%);
 }
 
-span.psw {
-  padding-top: 40px;
-}
-.button {
-  background-color: transparent;
-  border: groove;
-  color: white;
-  border-radius: 25px;
-  padding: 15px 32px;
-  text-align: center;
+.btn:link,
+.btn:visited{
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
+  text-transform:uppercase;
+  position:relative;
+  top:0;
+  left:0;
+  padding:20px 40px;
+  border-radius:100px;
+  display:inline-block;
+  transition: all .5s;
 }
 
-.button1 {
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
- border-radius: 12px;
-}
-.registerbtn {
-  background-color: #4169E1;
-  color: white;
-border-radius: 25px;
-  padding: 16px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 20%;
-  opacity: 0.9;
-  font-size: 20px;
-}
-hr {
-  border: 1px solid #f1f1f1;
-  margin-bottom: 25px;
+.btn-white{
+  background:#fff;
+  color:#000;
 }
 
+.btn:hover{
+   box-shadow:0px 10px 10px rgba(0,0,0,0.2);
+   transform : translateY(-3px);
+}
 
-.registerbtn:hover {
-  opacity: 1;
+.btn:active{
+  box-shadow:0px 5px 10px rgba(0,0,0,0.2)
+  transform:translateY(-1px);
+}
+
+.btn-bottom-animation-1{
+  animation:comeFromBottom 1s ease-out .8s;
 }
 
 .topright {
   position: absolute;
-  top: 6px;
-  right: 10px;
-  font-size: 30px;
+  top: -50px;
+  right: -400px;
+  font-size: 40px;
+  color: rgb(172, 158, 170);
+}
+.btn::after{
+  content:"";
+  text-decoration: none;
+  text-transform:uppercase;
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0;
+  left:0;
+  border-radius:100px;
+  display:inline-block;
+  z-index:-1;
+  transition: all .5s;
 }
 
+.btn-white::after {
+    background: #fff;
+}
+
+.btn-animation-1:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+@keyframes comeFromBottom{
+  0%{
+    opacity:0;
+    transform:translateY(40px);
+  }
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 </style>
 </head>
 <body>
-<div class="topnav">
-  <a class="active" href="/">Home</a>
-  <a href="/maps">Map</a>
-    <a href="/fee">Parking fee</a>
-  <a href="/contactus">Contact us</a>
-    <a href="/aboutus">About us</a>
-    <a href="/complaint">Complaint</a>
-  <a href="/signup/">SignUp</a>
-    <a><div class="topright">SMARTPARK</div></a>
-</div>
+  <header>
+    <video loop muted autoplay playsinline>
+    
+    </video>
+    <div class="banner">
+       <div class="banner-text">
+       
+          <div class="section">
 
-<div class="bg-image"></div>
-     <div class="bg-heading">
-        <h2 style="font-size:50px">SmartPark: Parking Booking</h2>
-     </div>
-<div class="bg-text">
-  <h1 style="font-size:35px; font-family:helvetica;"> Log In </h1>
-     <hr>
-<form action=" " method="post">
-    <h2 style="font-size:25px; padding-bottom:0px;">Username </h2>
-    <input type="text" style="font-size:20px; border-radius: 25px; " name="username"><br>
-    <h2 style="font-size:25px; padding-bottom:0px;">Password  </h2>
-    <input type="password" style="font-size:20px;border-radius: 25px;" name="password"><br><br>
-    <input class="registerbtn" type="submit" style="font-size:15px" value="Login">
-    <br><br>
-    <span style="font-size:25px" class="psw"> Forgot <a href="/forgot/" style="color:yellow" style="font-size:30px">Password?</a></span>
-</form>
-    <br>
-    <div class="form-group">
-            <div class="messages">
+<h2>Welcome to SmartPark!</h2>
+<P>Finding the perfect parking spot has never been easier. With SmartPark, your parking experience is now seamless, efficient, and reliable. Book your parking spot in advance and enjoy peace of mind.
 
-                    <div class="alert alert-success" style="color:red;"></div>
+  Start your journey stress-free with SmartPark – your smart parking solution</P>
+           <h3 class="w3-container w3-center w3-animate-zoom" style="font-size:35px" >SmartPark: Parking Booking</h3>
 
-            </div>
+
+          </div><br><br>
+        <!button type="submit" class="brk-btn" ><!/button>
+        <div class="box">
+        <div class="w3-container w3-center w3-animate-zoom">
+          <a href="/index/" style="margin-top:210px;" class="btn btn-white btn-animation-1">LOGIN</a> <a href="/signup/" style="margin-left:2em;" class="btn btn-white btn-animation-1">SIGNUP</a> <br><br><br>
+          <a href="/contactus/" class="btn btn-white btn-animation-1">Contact us</a>   <a href="complaint" style="margin-left:2em;" class="btn btn-white btn-animation-1">Complaints</a> <br><br><br>
+          <a href="/aboutus/" class="btn btn-white btn-animation-1">About us</a>   <a href="/maps/" style="margin-left:2em;"  class="btn btn-white btn-animation-1">Maps</a>
+          <a><div class="topright">SMARTPARK</div></a>
         </div>
-
-</div>
+        </div>
+       </div>
+    </div>
+  </header>
 </body>
 </html>
